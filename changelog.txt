@@ -1,0 +1,10 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.0.2
+Date: 04. 09. 2020
+  Bugfix:
+    - Fixed crash when trying to rotate a square equipment (new version for that one person who downloaded the mod minutes after posting)
+---------------------------------------------------------------------------------------------------
+Version: 0.0.1
+Date: 04. 09. 2020
+  Features:
+    - Initial creation
