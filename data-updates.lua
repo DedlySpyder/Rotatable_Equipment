@@ -1,6 +1,6 @@
-DEBUG_MODE = true
+local DEBUG_MODE = true
 
-debugLog = nil
+local debugLog = nil
 if DEBUG_MODE then
 	debugLog = log
 end
@@ -15,7 +15,7 @@ local allEquipment = {}
 for category, catData in pairs(data.raw) do
 	if string.match(category, "equipment") and category ~= "equipment-grid" and category ~= "equipment-category" then
 		for name, datum in pairs(catData) do
-			debugLog("Found equipment: " .. name)
+			debugLog("Equipment category: " .. category .. " - name: " .. name)
 			allEquipment[name] = datum
 		end
 	end
@@ -37,10 +37,19 @@ function flip_equipment(rawEquipment)
 	equipment.shape.height = shape.width
 	equipment.shape.width = shape.height
 	
-	local sprite = equipment.sprite
-	local size = math.min(sprite.height, sprite.width)
-	sprite.height = size
-	sprite.width = size
+	if equipment.rotated_sprite then
+		equipment.sprite = equipment.rotated_sprite
+	elseif equipment.rotated_sprite_filename then
+		local sprite = equipment.sprite
+		sprite.height = rawEquipment.sprite.width
+		sprite.width = rawEquipment.sprite.height
+		sprite.filename = equipment.rotated_sprite_filename
+	else
+		local sprite = equipment.sprite
+		local size = math.min(sprite.height, sprite.width)
+		sprite.height = size
+		sprite.width = size
+	end
 	
 	return equipment
 end

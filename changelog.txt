@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.3
+Date: 06. 09. 2020
+  Features:
+    - Added compatibility to support rotated sprites
+    - Added rotated sprites of the base game equipment
+---------------------------------------------------------------------------------------------------
 Version: 0.0.2
 Date: 04. 09. 2020
   Bugfix:
