@@ -33,6 +33,7 @@ function flip_equipment(rawEquipment)
 	local equipment = table.deepcopy(rawEquipment)
 	equipment.name = PROTOTYPE_PREFIX .. rawEquipment.name
 	equipment.localised_name = {"equipment-name." .. rawEquipment.name}
+	equipment.localised_description = {"item-description." .. rawEquipment.name}
 	
 	equipment.shape.height = shape.width
 	equipment.shape.width = shape.height
