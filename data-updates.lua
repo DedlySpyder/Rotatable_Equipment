@@ -38,21 +38,30 @@ function flip_equipment(rawEquipment)
 	equipment.shape.height = shape.width
 	equipment.shape.width = shape.height
 	
+	local sprite = equipment.sprite
 	if equipment.rotated_sprite then
 		equipment.sprite = equipment.rotated_sprite
+		
 	elseif equipment.rotated_sprite_filename then
-		local sprite = equipment.sprite
 		sprite.height = rawEquipment.sprite.width
 		sprite.width = rawEquipment.sprite.height
 		sprite.filename = equipment.rotated_sprite_filename
+		
+	elseif sprite.layers then
+		for _, layer in ipairs(sprite.layers) do
+			resizeSprite(layer)
+		end
 	else
-		local sprite = equipment.sprite
-		local size = math.min(sprite.height, sprite.width)
-		sprite.height = size
-		sprite.width = size
+		resizeSprite(sprite)
 	end
 	
 	return equipment
+end
+
+function resizeSprite(sprite)
+	local size = math.min(sprite.height, sprite.width)
+	sprite.height = size
+	sprite.width = size
 end
 
 function new_item_for_equipment(oldItem, equipment)
@@ -67,6 +76,7 @@ end
 function create_alt_equipment(item)
 	local rawEquipment = allEquipment[item.placed_as_equipment_result]
 	if rawEquipment then
+		debugLog("Found equipment for " .. item.name)
 		local newEquipment = flip_equipment(rawEquipment)
 		if not newEquipment then return end
 		

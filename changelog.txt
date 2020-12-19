@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.6
+Date: 18. 12. 2020
+  Bugfixes:
+    - Fixed crash when generating rotated equipment when the base equipment has a layered sprite
+---------------------------------------------------------------------------------------------------
 Version: 0.0.5
 Date: 23. 11. 2020
   Changes:
@@ -17,7 +22,7 @@ Date: 06. 09. 2020
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.2
 Date: 04. 09. 2020
-  Bugfix:
+  Bugfixes:
     - Fixed crash when trying to rotate a square equipment (new version for that one person who downloaded the mod minutes after posting)
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.1
