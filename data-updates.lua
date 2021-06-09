@@ -37,25 +37,42 @@ function flip_equipment(rawEquipment)
 	
 	equipment.shape.height = shape.width
 	equipment.shape.width = shape.height
-	
-	local sprite = equipment.sprite
-	if equipment.rotated_sprite then
-		equipment.sprite = equipment.rotated_sprite
-		
-	elseif equipment.rotated_sprite_filename then
-		sprite.height = rawEquipment.sprite.width
-		sprite.width = rawEquipment.sprite.height
-		sprite.filename = equipment.rotated_sprite_filename
-		
-	elseif sprite.layers then
-		for _, layer in ipairs(sprite.layers) do
-			resizeSprite(layer)
-		end
-	else
-		resizeSprite(sprite)
+
+	equipment.sprite = handleSprites(equipment, equipment.sprite, rawEquipment.sprite)
+
+	if equipment.sprite.hr_version then
+		equipment.sprite.hr_version = handleSprites(equipment, equipment.sprite.hr_version, rawEquipment.sprite.hr_version, true)
 	end
 	
 	return equipment
+end
+
+function handleSprites(equipment, sprite, originalSprite, isHr)
+	local hrPrefix = ""
+	if isHr then hrPrefix = "hr_" end
+
+	if equipment[hrPrefix .. "rotated_sprite"] then
+		debugLog("Found rotated sprite")
+		return equipment[hrPrefix .. "rotated_sprite"]
+
+	elseif equipment[hrPrefix .. "rotated_sprite_filename"] then
+		debugLog("Found rotated sprite filename")
+		sprite.height = originalSprite.width
+		sprite.width = originalSprite.height
+		sprite.filename = equipment[hrPrefix .. "rotated_sprite_filename"]
+
+	elseif sprite.layers then
+		debugLog("Defaulting to shrinking layers")
+		for _, layer in ipairs(sprite.layers) do
+			resizeSprite(layer)
+		end
+
+	else
+		debugLog("Defaulting to shrinking")
+		resizeSprite(sprite)
+	end
+
+	return sprite
 end
 
 function resizeSprite(sprite)

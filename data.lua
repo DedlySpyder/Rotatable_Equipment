@@ -14,9 +14,52 @@ function add_sprite_file_name(category, name, filename)
 	end
 end
 
-add_sprite_file_name("battery-equipment", "battery-equipment", "__Rotatable_Equipment__/graphics/rotated-battery-equipment.png")
-add_sprite_file_name("battery-equipment", "battery-mk2-equipment", "__Rotatable_Equipment__/graphics/rotated-battery-mk2-equipment.png")
-add_sprite_file_name("movement-bonus-equipment", "exoskeleton-equipment", "__Rotatable_Equipment__/graphics/rotated-exoskeleton-equipment.png")
+function add_hr_sprite_file_name(category, name, filename)
+	if data.raw[category] and data.raw[category][name] then
+		debugLog("Adding hr sprite filename <" .. filename .. "> for " .. category .. " - " .. name)
+		data.raw[category][name].hr_rotated_sprite_filename = filename
+	else
+		debugLog("Could not find equipment " .. category .. " - " .. name)
+	end
+end
+
+-- Add Normal Sprites
+add_sprite_file_name(
+		"battery-equipment",
+		"battery-equipment",
+		"__Rotatable_Equipment__/graphics/rotated-battery-equipment.png"
+)
+
+add_sprite_file_name(
+		"battery-equipment",
+		"battery-mk2-equipment",
+		"__Rotatable_Equipment__/graphics/rotated-battery-mk2-equipment.png"
+)
+
+add_sprite_file_name(
+		"movement-bonus-equipment",
+		"exoskeleton-equipment",
+		"__Rotatable_Equipment__/graphics/rotated-exoskeleton-equipment.png"
+)
+
+-- Add HR Sprites
+add_hr_sprite_file_name(
+		"battery-equipment",
+		"battery-equipment",
+		"__Rotatable_Equipment__/graphics/rotated-hr-battery-equipment.png"
+)
+
+add_hr_sprite_file_name(
+		"battery-equipment",
+		"battery-mk2-equipment",
+		"__Rotatable_Equipment__/graphics/rotated-hr-battery-mk2-equipment.png"
+)
+
+add_hr_sprite_file_name(
+		"movement-bonus-equipment",
+		"exoskeleton-equipment",
+		"__Rotatable_Equipment__/graphics/rotated-hr-exoskeleton-equipment.png"
+)
 
 
 data:extend({
