@@ -1,11 +1,14 @@
 {
   "name": "Rotatable_Equipment",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "title": "Rotatable Equipment",
   "author": "DedlySpyder",
   "contact": "DedlySpyder@gmail.com",
   "homepage": "",
   "description": "Allows players to rotate any non-square equipment",
-  "dependencies": ["base >= 1.1.0"],
+  "dependencies": [
+    "base >= 1.1.0",
+    "(?) Krastorio2 >= 0.0.1"
+  ],
   "factorio_version": "1.1"
 }

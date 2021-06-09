@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.7
+Date: 08. 06. 2021
+  Changes:
+    - Added Krastorio2 as a hidden dependency to fix compatibility issues (not direct support for sprites, just making it usable)
+---------------------------------------------------------------------------------------------------
 Version: 0.0.6
 Date: 18. 12. 2020
   Bugfixes:
