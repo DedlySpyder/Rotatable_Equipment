@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+Date: 10. 06. 2021
+  Features:
+    - Added expected base filename optional checks for sprites & sprite filenames
+    - Added hr rotated sprite support
+    - Added base game hr sprites
+  Changes:
+    - Updated the base game rotated sprites (battery & exoskeletons had small changes since this mod was created)
+    - Changed default rotated sprite to shrink the non-rotated sprite so it can fit (instead of cropping)
+---------------------------------------------------------------------------------------------------
 Version: 0.0.7
 Date: 08. 06. 2021
   Changes:
