@@ -53,9 +53,6 @@ If the equipment prototype in `data.raw` has a property called `rotated_sprite` 
 *full* sprite definition for the *normal* sprite. This definition will be used as is, so it must be a valid 
 [Prototype/Sprite](https://wiki.factorio.com/Prototype/Sprite).
 
-An `hr_rotated_sprite` property can be used to supply the high resolution (`hr_version`) sprite, or it can be included in the 
-rotate_sprite definition.
-
 Example: The base game `battery-equipment` is normally 32x64, the `rotated-battery-equipment.png` is a 64x32 version of 
 the base sprite. The following can be used in the main `data` stage to register it for rotation:
 
@@ -74,8 +71,6 @@ If the equipment prototype in `data.raw` has a property called `rotated_sprite_f
 `rotated_sprite`, then `rotated_sprite_filename` will be used as the `filename` for the sprite. It is assumed to be the
 correct size for the new equipment.
 
-An `hr_rotated_sprite_filename` property can be used similarly to override the `hr_version` of the sprite.
-
 Example: The base game `battery-equipment` is normally 32x64, the `rotated-battery-equipment.png` is a 64x32 version of
 the base sprite. The following can be used in the main `data` stage to register it for rotation:
 
@@ -86,7 +81,7 @@ data.raw["battery-equipment"]["battery-equipment"].rotated_sprite_filename = "__
 
 ### Expected Base Filename
 
-The `expected_base_filename` and/or `hr_expected_base_filename` properties can be used to skip rotated sprite assignment.
+The `expected_base_filename`` property can be used to skip rotated sprite assignment.
 The best example for this use case is that some mods replace the base sprites for the equipment with new ones, so the base
 Rotated Equipment mod will not add it's rotated sprites in those cases (because the rotated version of an equipment would
 look different from the normal one).
