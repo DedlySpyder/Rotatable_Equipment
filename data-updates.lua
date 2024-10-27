@@ -92,13 +92,14 @@ function new_item_for_equipment(oldItem, equipment)
 	local item = table.deepcopy(oldItem)
 	item.name = PROTOTYPE_PREFIX .. oldItem.name
 	item.localised_name = {"item-name." .. oldItem.name}
-	item.placed_as_equipment_result = equipment.name
-	item.flags = {"hidden"}
+	item.place_as_equipment_result = equipment.name
+	item.hidden = true
+	item.hidden_in_factoriopedia = true
 	return item
 end
 
 function create_alt_equipment(item)
-	local rawEquipment = allEquipment[item.placed_as_equipment_result]
+	local rawEquipment = allEquipment[item.place_as_equipment_result]
 	if rawEquipment then
 		debugLog("Found equipment for " .. item.name)
 		local newEquipment = flip_equipment(rawEquipment)
@@ -111,7 +112,7 @@ function create_alt_equipment(item)
 end
 
 for _, item in pairs(data.raw["item"]) do
-	if item.placed_as_equipment_result then
+	if item.place_as_equipment_result then
 		create_alt_equipment(item)
 	end
 end
