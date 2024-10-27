@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.0
+Date: 27. 10. 2024
+  Features:
+    - Updated for 2.0
+    - Added Space Age rotated sprites
+  Changes:
+    - Removed HR sprite support (no longer used by Factorio)
+---------------------------------------------------------------------------------------------------
 Version: 0.1.0
 Date: 10. 06. 2021
   Features:
