@@ -31,10 +31,24 @@ add_sprite_file_name(
 )
 
 add_sprite_file_name(
+		"battery-equipment",
+		"battery-mk3-equipment",
+		"__Rotatable_Equipment__/graphics/rotated-battery-mk3-equipment.png",
+		"__space-age__/graphics/equipment/battery-mk3-equipment.png"
+)
+
+add_sprite_file_name(
 		"movement-bonus-equipment",
 		"exoskeleton-equipment",
 		"__Rotatable_Equipment__/graphics/rotated-exoskeleton-equipment.png",
 		"__base__/graphics/equipment/exoskeleton-equipment.png"
+)
+
+add_sprite_file_name(
+		"inventory-bonus-equipment",
+		"toolbelt-equipment",
+		"__Rotatable_Equipment__/graphics/rotated-toolbelt-equipment.png",
+		"__space-age__/graphics/equipment/toolbelt-equipment.png"
 )
 
 
