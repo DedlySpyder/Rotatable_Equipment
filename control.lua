@@ -23,7 +23,7 @@ script.on_event("RoEq_rotate_equipment", function(event)
 			end
 			
 			log("New equipment: " .. name)
-			cursor.set_stack{name=name, count=cursor.count}
+			cursor.set_stack{name=name, count=cursor.count, quality=cursor.quality.name}
 		end
 	end
 end)
