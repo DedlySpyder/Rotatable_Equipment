@@ -32,7 +32,7 @@ function flip_equipment(rawEquipment)
 	
 	local equipment = table.deepcopy(rawEquipment)
 	equipment.name = PROTOTYPE_PREFIX .. rawEquipment.name
-	equipment.localised_name = {"equipment-name." .. rawEquipment.name}
+	equipment.localised_name = {"RoEq_alt_rotated_prefix", {"equipment-name." .. rawEquipment.name}}
 	equipment.localised_description = {"item-description." .. rawEquipment.name}
 	
 	equipment.shape.height = shape.width
@@ -85,7 +85,7 @@ end
 function new_item_for_equipment(oldItem, equipment)
 	local item = table.deepcopy(oldItem)
 	item.name = PROTOTYPE_PREFIX .. oldItem.name
-	item.localised_name = {"item-name." .. oldItem.name}
+	item.localised_name = {"RoEq_alt_rotated_prefix", {"equipment-name." .. oldItem.name}}
 	item.place_as_equipment_result = equipment.name
 	item.hidden = true
 	item.hidden_in_factoriopedia = true
