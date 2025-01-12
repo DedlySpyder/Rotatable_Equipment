@@ -44,17 +44,29 @@ script.on_event("RoEq_rotate_equipment", function(event)
 	end
 end)
 
+function check_for_rotation_mods()
+	if script.active_mods["equipment-gantry"] then
+		storage.convert_rotated_items = false
+		return
+	end
+	storage.convert_rotated_items = true
+end
+
+script.on_init(check_for_rotation_mods)
+script.on_configuration_changed(check_for_rotation_mods)
 
 script.on_event(defines.events.on_player_main_inventory_changed, function(event)
-	local inventory = game.players[event.player_index].get_main_inventory()
-	if inventory and inventory.valid then
-		for _, item in pairs(inventory.get_contents()) do
-			local name = item.name
-			if string.find(name, PROTOTYPE_PREFIX) then
-				local count = item.count
-				local quality = item.quality
-				inventory.remove(item)
-				inventory.insert{name=remove_prefix(name), count=count, quality=quality}
+	if storage.convert_rotated_items then
+		local inventory = game.players[event.player_index].get_main_inventory()
+		if inventory and inventory.valid then
+			for _, item in pairs(inventory.get_contents()) do
+				local name = item.name
+				if string.find(name, PROTOTYPE_PREFIX) then
+					local count = item.count
+					local quality = item.quality
+					inventory.remove(item)
+					inventory.insert{name=remove_prefix(name), count=count, quality=quality}
+				end
 			end
 		end
 	end

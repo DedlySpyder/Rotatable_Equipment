@@ -3,6 +3,9 @@ Version: 0.2.2
 Date: 01. 01. 2025
   Changes:
     - Added support for rotating ghost equipment, so equipment can be rotated from the map view
+    - Added rotated item sprites to differentiate them in inventories
+    - Added rotate/restore recipes to rotate equipment in assembling machines
+    - New recipes are shown only when compatible mods are loaded (currently just equipment-gantry)
   Bugfixes:
     - Fixed automatic conversion of rotated equipments in player inventory (broken since Factorio 2.0.7)
 ---------------------------------------------------------------------------------------------------
