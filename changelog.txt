@@ -3,6 +3,8 @@ Version: 0.2.2
 Date: 01. 01. 2025
   Changes:
     - Added support for rotating ghost equipment, so equipment can be rotated from the map view
+  Bugfixes:
+    - Fixed automatic conversion of rotated equipments in player inventory (broken since Factorio 2.0.7)
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.1
 Date: 30. 10. 2024

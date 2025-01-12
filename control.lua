@@ -48,10 +48,11 @@ end)
 script.on_event(defines.events.on_player_main_inventory_changed, function(event)
 	local inventory = game.players[event.player_index].get_main_inventory()
 	if inventory and inventory.valid then
-		for name, count in pairs(inventory.get_contents()) do
+		for _, item in pairs(inventory.get_contents()) do
+			local name = item.name
 			if string.find(name, PROTOTYPE_PREFIX) then
 				inventory.remove(name)
-				inventory.insert{name=remove_prefix(name), count=count}
+				inventory.insert{name=remove_prefix(name), count=item.count, quality=item.quality}
 			end
 		end
 	end
