@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.2
-Date: 01. 01. 2025
+Date: 12. 01. 2025
   Changes:
     - Added support for rotating ghost equipment, so equipment can be rotated from the map view
     - Added rotated item sprites to differentiate them in inventories
