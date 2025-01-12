@@ -51,8 +51,10 @@ script.on_event(defines.events.on_player_main_inventory_changed, function(event)
 		for _, item in pairs(inventory.get_contents()) do
 			local name = item.name
 			if string.find(name, PROTOTYPE_PREFIX) then
-				inventory.remove(name)
-				inventory.insert{name=remove_prefix(name), count=item.count, quality=item.quality}
+				local count = item.count
+				local quality = item.quality
+				inventory.remove(item)
+				inventory.insert{name=remove_prefix(name), count=count, quality=quality}
 			end
 		end
 	end
