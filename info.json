@@ -1,6 +1,6 @@
 {
   "name": "Rotatable_Equipment",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "title": "Rotatable Equipment",
   "author": "DedlySpyder",
   "contact": "DedlySpyder@gmail.com",
@@ -12,5 +12,5 @@
     "(?) Krastorio2 >= 0.0.1",
     "(?) equipment-gantry >= 0.0.1"
   ],
-  "factorio_version": "2.0"
+  "factorio_version": "2.1"
 }

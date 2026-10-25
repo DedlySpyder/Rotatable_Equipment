@@ -192,7 +192,7 @@ function create_rotational_recipe(oldItem, isRotate, hidden)
 		recipe.name = rotatedName .. "_" .. rotateType
 		recipe.localised_name = {"RoEq_alt_recipe_" .. rotateType, {"equipment-name." .. oldName}}
 		recipe.order = oldItem.order .. order
-		recipe.category = "advanced-crafting"
+		recipe.categories = {"advanced-crafting"}
 		recipe.subgroup = "RoEq_alt_rotated_equipment"
 		recipe.energy_required = 0.5
 		recipe.hide_from_player_crafting = true
