@@ -133,7 +133,7 @@ function should_show_recipes()
 end
 
 function add_recipe_to_techs(oldRecipeName, newRecipeName)
-	local techs = allTech[oldRecipeName]
+	local techs = allTech[oldRecipeName] or {}
 	for _, t in ipairs(techs) do
 		table.insert(data.raw["technology"][t].effects, {
 			type = "unlock-recipe",
@@ -191,7 +191,7 @@ function create_rotational_recipe(oldItem, isRotate, hidden)
 	if recipe then
 		recipe.name = rotatedName .. "_" .. rotateType
 		recipe.localised_name = {"RoEq_alt_recipe_" .. rotateType, {"equipment-name." .. oldName}}
-		recipe.order = oldItem.order .. order
+		recipe.order = (oldItem.order or "") .. order
 		recipe.categories = {"advanced-crafting"}
 		recipe.subgroup = "RoEq_alt_rotated_equipment"
 		recipe.energy_required = 0.5
